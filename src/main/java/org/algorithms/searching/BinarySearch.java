@@ -1,4 +1,15 @@
-package org.algorithms;
+package org.algorithms.searching;
+
+/**
+ * Binary search algorithm steps:<br/>
+ * 1. Given a sorted array with n number of elements, let the left and right be the start and end index of the array<br/>
+ * 2. Find the middle element of the array using this left and right<br/>
+ * 2. If the target element matches the middle element, return the element.<br/>
+ * 3. If the target element is less than the middle element, change the value of right to middle - 1<br/>
+ * 4. Else if the target element is greater than the middle element, change the value of left to middle + 1<br/>
+ * 5. Repeat these steps until left is less than right.
+ *
+ */
 
 public class BinarySearch {
     public static void main(String[] args) {
