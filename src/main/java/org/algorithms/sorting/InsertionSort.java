@@ -1,5 +1,7 @@
 package org.algorithms.sorting;
 
+import org.App;
+
 /**
  * Insertion sort algorithm:<br/>
  * 1. Start checking from second element in the array.<br/>
@@ -13,18 +15,11 @@ public class InsertionSort {
 //        int[] nums = {19, 5, 15, 4, 1};
 //        int[] nums = {9,8,7,6,5,4,3,2,1};
         int[] nums = {6, 5, 2, 8, 3, 7};
-        System.out.println("Insertion sort: Array before sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
 
+        App.printArray(nums, "Insertion sort: Array before sorting");
         nums = insertionSort(nums);
-
         System.out.println();
-        System.out.println("Insertion sort: Array after sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
+        App.printArray(nums, "Insertion sort: Array after sorting");
     }
 
     /*

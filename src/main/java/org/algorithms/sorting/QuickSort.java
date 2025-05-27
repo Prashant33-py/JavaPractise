@@ -1,17 +1,14 @@
 package org.algorithms.sorting;
 
+import org.App;
+
 public class QuickSort {
     public static void main(String[] args) {
         int arr[] = {5,6,2,3,1,8,4};
 
-        System.out.println("Quick sort: Array before sorting");
-        for (int num: arr){
-            System.out.print(num + " ");
-        }
-
+        App.printArray(arr, "Quick sort: Array before sorting");
         quickSort(arr, 0, arr.length - 1);
-
-        System.out.println("Quick sort: Array after sorting");
+        App.printArray(arr, "Quick sort: Array after sorting");
         for (int num: arr){
             System.out.print(num + " ");
         }

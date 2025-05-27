@@ -1,5 +1,7 @@
 package org.algorithms.sorting;
 
+import org.App;
+
 /**
  * Bubble sort algorithm:<br/>
  * Simplest sorting algorithm<br/>
@@ -25,18 +27,12 @@ public class BubbleSort {
         int[] nums = {8,7,6,5,4,3,2,1};
         int arrSize = nums.length;
         int temp = 0;
-        System.out.println("Bubble sort: Array before sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
 
+        App.printArray(nums, "Bubble sort: Array before sorting");
         nums = bubbleSort(nums);
 
         System.out.println();
-        System.out.println("Bubble sort: Array after sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
+        App.printArray(nums, "Bubble sort: Array after sorting");
     }
 
     private static int[] bubbleSort(int[] nums) {

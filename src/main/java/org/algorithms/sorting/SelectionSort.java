@@ -1,5 +1,7 @@
 package org.algorithms.sorting;
 
+import org.App;
+
 /**
  * Selection sort algorithm:<br/>
  * 1. Assume the first element as max.<br/>
@@ -23,18 +25,12 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] nums = {6, 5, 2, 8, 3, 7};
 //        int[] nums = {8,7,6,5,4,3,2,1};
-        System.out.println("Selection sort: Array before sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
 
+        App.printArray(nums, "Selection sort: Array before sorting");
         nums = selectionSort(nums);
 
         System.out.println();
-        System.out.println("Selection sort: Array after sorting");
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
+        App.printArray(nums, "Selection sort: Array after sorting");
     }
 
     private static int[] selectionSort(int[] nums) {
