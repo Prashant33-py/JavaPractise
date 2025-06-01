@@ -15,5 +15,10 @@ public class Main {
         customList.insertBegin(23);
         customList.show();
 
+        customList.insertAt(0, 12);
+        customList.show();
+
+        customList.deleteAt(0);
+        customList.show();
     }
 }
