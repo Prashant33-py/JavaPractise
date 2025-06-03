@@ -6,7 +6,7 @@ public class Stack {
     int top = 0;
 
     public void push(int data) {
-        if (top > 4){
+        if (top > 4) {
             System.out.println("Stack is full");
         } else {
             stack[top] = data;
@@ -25,14 +25,14 @@ public class Stack {
     }
 
     public int peek() {
-        return stack[top-1];
+        return stack[top - 1];
     }
 
-    public int size(){
+    public int size() {
         return top;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return top <= 0;
     }
 
