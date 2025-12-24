@@ -10,6 +10,7 @@ public class ThreadPractise {
         //Way 1: Extending Thread class
         Thread thread1 = new SampleThread("cThread");
         thread1.start();
+        thread1.getState();
 
         //Way 2: Implementing Runnable interface
         //This way is preferred as Java supports only single inheritance and by implementing Runnable we can still extend another class/implement other interfaces
@@ -41,6 +42,31 @@ public class ThreadPractise {
         }, "PopThread").start();
 
         System.out.println("Main thread finished");
+
+        threadState();
+
+    }
+
+    /**
+     * This method is created for checking the thread state and how they work
+     */
+    public static void threadState(){
+        System.out.println("-----------------------------------------");
+        Thread t1 = new Thread(() -> {
+            try {
+                Thread.sleep(1);
+                for (int i = 0; i < 10000; i++);
+
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        t1.start();
+        while(true){
+            Thread.State state = t1.getState();
+            System.out.println(state);
+            if(state == Thread.State.TERMINATED) break;
+        }
     }
 
 }

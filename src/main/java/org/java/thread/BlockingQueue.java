@@ -27,7 +27,17 @@ public class BlockingQueue {
 
     public boolean add(int val){
         synchronized (queue) {
-            if (queue.size() == capacity) {
+            /*
+             * The reason for using while instead of if condition:
+             * Consider 2 adder threads a1 and a2 and 1 removal thread r1.
+             * When the capacity is full and a1 thread starts executing, it will have to wait and same for a2 as well.
+             * Once the r1 thread is executed creating an empty space, it will be notified to all the threads.
+             * Now when the a1 thread is called, it will execute the further steps i.e. adding the new value.
+             * If a2 will also start the execution but since the capacity is already full, it will still try to add the element and as a result will not be able to do so.
+             * Now if we use while loop instead of if condition, thread t2 will now check the condition inside the while() - since it is a loop and then will start waiting.
+             *
+             */
+            while (queue.size() == capacity) {
                 try {
                     queue.wait();
                 } catch (InterruptedException e) {
@@ -36,13 +46,13 @@ public class BlockingQueue {
             }
             queue.add(val);
             queue.notify();
-            return true;
+             return true;
         }
     }
 
     public int remove(){
         synchronized (queue) {
-            if (queue.isEmpty()) {
+            while (queue.isEmpty()) {
                 try {
                     queue.wait();
                 } catch (InterruptedException e) {
