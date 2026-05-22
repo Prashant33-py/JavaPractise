@@ -88,4 +88,14 @@ public class App
         }
         System.out.println();
     }
+
+    public static void printArray(int[] arr){
+        for (int num: arr){
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+    public static <T> void printValue(String message, T valueToBePrinted){
+        System.out.println(message+": "+valueToBePrinted);
+    }
 }
