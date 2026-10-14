@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class InputUtil {
 
+    public static Random random = new Random();
+
     public static int[] processInputAndReturnArray(){
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
@@ -18,7 +20,6 @@ public class InputUtil {
     }
 
     public static int[] createRandomIntArray(){
-        Random random = new Random();
         int randomArrLen = random.nextInt(12);
         int[] randIntArr = new int[randomArrLen];
         for (int i = 0; i < randomArrLen; i++) {
@@ -31,5 +32,13 @@ public class InputUtil {
         int[] sortedArr = createRandomIntArray();
         Arrays.sort(sortedArr);
         return sortedArr;
+    }
+
+    public static boolean checkIfArrayIsEmpty(int[] arr){
+        return arr.length < 1;
+    }
+
+    public static int pickRandomNumber(int limit){
+        return random.nextInt(limit);
     }
 }
