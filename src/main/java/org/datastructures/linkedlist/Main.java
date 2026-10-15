@@ -20,5 +20,8 @@ public class Main {
 
         customList.deleteAt(0);
         customList.show();
+
+        customList.reverseLinkedList();
+        customList.show();
     }
 }

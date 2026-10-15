@@ -19,17 +19,17 @@ public class InputUtil {
         return inputArr;
     }
 
-    public static int[] createRandomIntArray(){
-        int randomArrLen = random.nextInt(12);
+    public static int[] createRandomIntArray(int origin, int limit){
+        int randomArrLen = random.nextInt(5, 12);
         int[] randIntArr = new int[randomArrLen];
         for (int i = 0; i < randomArrLen; i++) {
-            randIntArr[i] = random.nextInt(100);
+            randIntArr[i] = random.nextInt(origin, limit);
         }
         return randIntArr;
     }
 
     public static int[] createSortedArray(){
-        int[] sortedArr = createRandomIntArray();
+        int[] sortedArr = createRandomIntArray(0, 100);
         Arrays.sort(sortedArr);
         return sortedArr;
     }
@@ -38,7 +38,7 @@ public class InputUtil {
         return arr.length < 1;
     }
 
-    public static int pickRandomNumber(int limit){
-        return random.nextInt(limit);
+    public static int pickRandomNumber(int origin, int limit){
+        return random.nextInt(origin, limit);
     }
 }

@@ -4,11 +4,11 @@ import org.App;
 
 public class CountOccurrences {
     public static void main(String[] args) {
-        int[] arr = InputUtil.createRandomIntArray();
+        int[] arr = InputUtil.createRandomIntArray(0, 100);
 
         CountOccurrences co = new CountOccurrences();
         App.printArray(arr);
-        int target = arr[InputUtil.pickRandomNumber(arr.length)];
+        int target = arr[InputUtil.pickRandomNumber(0, arr.length)];
         System.out.println("Target element " +target+ " occurred " +co.countTargetOccurrences(arr, target)+ " times");
     }
 

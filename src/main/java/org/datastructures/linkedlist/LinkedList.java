@@ -71,4 +71,24 @@ public class LinkedList {
         }
         return len;
     }
+
+    public Node getHead(){
+        return head;
+    }
+
+    public void reverseLinkedList(){
+        Node prev = head;
+        Node curr = head.next;
+
+        while (curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+        head.next = null;
+        head = prev;
+
+    }
 }

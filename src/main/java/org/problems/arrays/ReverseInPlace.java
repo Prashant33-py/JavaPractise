@@ -4,7 +4,7 @@ import org.App;
 
 public class ReverseInPlace {
     public static void main(String[] args) {
-        int[] arr = InputUtil.createRandomIntArray();
+        int[] arr = InputUtil.createRandomIntArray(0, 100);
         System.out.print("Initial array is: ");
         App.printArray(arr);
 

@@ -11,7 +11,7 @@ public class CheckSorted{
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,2};
-        int[] arr1 = InputUtil.createRandomIntArray();
+        int[] arr1 = InputUtil.createRandomIntArray(0,100);
         int[] arr2 = InputUtil.createSortedArray();
         int[] arr3 = InputUtil.createSortedArray();
         int[] arr4 = InputUtil.createSortedArray();

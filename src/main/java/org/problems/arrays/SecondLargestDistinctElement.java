@@ -9,7 +9,7 @@ import org.App;
 public class SecondLargestDistinctElement {
     public static void main(String[] args) {
         SecondLargestDistinctElement slde = new SecondLargestDistinctElement();
-        int[] randomArr = InputUtil.createRandomIntArray();
+        int[] randomArr = InputUtil.createRandomIntArray(0, 100);
         System.out.print("In the given array: ");
         App.printArray(randomArr);
         System.out.println("The second largest element is: " +slde.findSecondLargestDistinctElementInArray(randomArr));
